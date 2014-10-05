@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comment Remover !</title>
+	<link rel="stylesheet" type="text/css" href="codemirror/codemirror.css">
+	<link rel="stylesheet" type="text/css" href="remover.css">
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+	
+<header>
+    <h1>Comment Remover</h1>
+    <p>
+        A tool that allows you to remove the comments from your code.
+    </p>
+    <p>
+        Is particularly useful when working with large JSON files, because I tend to comment them out a lot, this tools allows me to strip the comments before validation.
+    </p>
+    <hr>
+    <p>
+        As far as my testing goes it works with all the languages that use forward slashes as comments (i.e : it doesn't work with Ruby).
+    </p>
+    <p>
+        I hope it will help, PRs welcome, especially regarding design/UX. :)
+    </p>
+</header>
+<section class="code">
+
+    <textarea id="source">
+    //hi //cool isn't it ?
+    /* **
+    * way to go ! //ha ha
+    */
+    //no commment /* will be spared */
+    function yeah(num) {
+        
+        if(num < 20){
+            return num+1;
+        }
+    }
+    </textarea>
+</section>
+
+<button id="btn">Remove Comments</button>
+    
+<footer>
+    <p>
+        Born out of desperation when I could not find something online that allowed me copy, paste, and do ctrl+a on the code.
+    </p>
+    <p>
+        By <a href="http://www.github.com/alvinsight">@alvinsight</a>
+    </p>
+</footer>
+
+
+    <script src="codemirror/codemirror.js"></script>
+    <script src="codemirror/jsmode.js"></script>
+    <script type="text/javascript" src="remover.js"></script>
+</body>
+</html>
